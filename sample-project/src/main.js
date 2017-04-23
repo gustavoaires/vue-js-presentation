@@ -3,7 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// to consume rest api
+import vueResource from 'vue-resource'
 
+Vue.use(vueResource)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
