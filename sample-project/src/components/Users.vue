@@ -14,7 +14,8 @@
     <ul>
       <li v-for="user in users">
         <input v-model="user.contacted" class="toggle" type="checkbox">
-        <span v-bind:class="{contacted: user.contacted}">
+        <!--<span v-bind:class="{contacted: user.contacted}">-->
+        <span>
           {{ user.name }}: {{ user.email }}
           <button v-on:click="deleteUser(user)">x</button>
         </span>
@@ -37,11 +38,10 @@
     },
     methods: {
       addUser: function (e) {
-        this.users.push({
-          name: this.newUser.name,
-          email: this.newUser.email,
-          contacted: false
-        })
+        this.$http.post('http://rest.learncode.academy/api/gustavo/alunos', this.newUser)
+          .then(function (response) {
+            this.users.push(response.data)
+          })
         e.preventDefault()
       },
       // removes just from the internal list
@@ -55,7 +55,7 @@
     created: function () {
       // retrieving data from the url
       // adding to the list
-      this.$http.get('https://jsonplaceholder.typicode.com/users')
+      this.$http.get('http://rest.learncode.academy/api/gustavo/alunos')
         .then(function (response) {
           this.users = response.data
         })

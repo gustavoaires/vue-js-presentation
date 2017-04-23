@@ -1,5 +1,6 @@
 <template>
   <div class="test">
+    <h2>{{ msg }}</h2>
     <span v-html="title"></span>
     <input type="text" v-model="title">
 
@@ -36,7 +37,7 @@
     props: {
       msg: {
         type: String,
-        default: 'Receives text from parent component'
+        default: 'Receives text from a parent component'
       }
     },
     data () {

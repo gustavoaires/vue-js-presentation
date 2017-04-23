@@ -1,22 +1,22 @@
 <template>
   <div id="app">
     <ul>
-      <li><router-link to="/">Users</router-link></li>
-      <li><router-link to="/test">Test</router-link></li>
+      <li><router-link to="/">Cadastrar Aluno</router-link></li>
+      <li><router-link to="/veralunos">Ver Alunos</router-link></li>
     </ul>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Test from './components/Test'
-import Users from './components/Users'
+import cadastrar from './components/CadastrarAlunos'
+import veralunos from './components/VerAlunos'
 
 export default {
   name: 'app',
   components: {
-    Test,
-    Users
+    cadastrar,
+    veralunos
   }
 }
 </script>
@@ -30,6 +30,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+h1, h2 {
+  font-weight: normal;
+}
 
 ul {
   list-style-type: none;
@@ -40,7 +43,7 @@ li {
   margin: 0 10px;
 }
 
-a {
+a, button {
   color: #42b983;
 }
 </style>
