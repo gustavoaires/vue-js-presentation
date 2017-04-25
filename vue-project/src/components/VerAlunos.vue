@@ -39,6 +39,7 @@ export default {
         this.alunos = response.data
       })
   },
+  // created()
   methods: {
     removerAluno: function (aluno) {
       this.$http.delete(this.apiUrl, aluno.id)

@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="cadastrar">
+      <p>{{ passProps }}</p>
       <form v-on:submit="cadastrarAluno">
         <label for="nome">Nome</label>
         <input type="text" name="nome" v-model="novoAluno.nome">
@@ -15,6 +16,7 @@
 <script>
 export default {
   name: 'cadastrar',
+  props: ['passProps'],
   data () {
     return {
       novoAluno: {

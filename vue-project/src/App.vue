@@ -5,18 +5,24 @@
       <li><router-link to="/veralunos">Ver Alunos</router-link></li>
     </ul>
     <router-view></router-view>
+    <!-- <CadastrarAlunos :passProps="message"></CadastrarAlunos> -->
   </div>
 </template>
 
 <script>
-import cadastrar from './components/CadastrarAlunos'
-import veralunos from './components/VerAlunos'
+import CadastrarAlunos from './components/CadastrarAlunos'
+import VerAlunos from './components/VerAlunos'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      message: 'Algum texto!'
+    }
+  },
   components: {
-    cadastrar,
-    veralunos
+    CadastrarAlunos,
+    VerAlunos
   }
 }
 </script>
